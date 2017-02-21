@@ -9,12 +9,16 @@ from scrapy.mail import MailSender
 mailer = MailSender()
 
 class ZhihuspiderPipeline(object):
-    def process_item(self, item, spider):
-        self.file = codecs.open('data.txt', 'w', encoding='utf-8')
-        for line in item['author']:
-            self.file.write(line + '\n')
+    def open_spider(self, spider):
+        self.file = codecs.open('data.txt', 'a', encoding='utf-8')
+        self.file.truncate()
         self.file.close()
+        return 0
 
-        mailer.send(to=["546649174@qq.com"], subject="The Spider has finished", body="No no no nothing", cc=["loveyu0122@foxmail.com"])
-
+    def process_item(self, item, spider):
+        self.file = codecs.open('data.txt', 'a', encoding='utf-8')
+        self.file.write(item["title"] + item["author"] + '\r')
+        self.file.close()
         return item
+
+
