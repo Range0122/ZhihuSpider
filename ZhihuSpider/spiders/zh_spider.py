@@ -11,12 +11,15 @@ class ZhSpider(scrapy.Spider):
 
     def parse(self, response):
         l = ItemLoader(item=ZhihuspiderItem(), response=response)
+        
         # item = ZhihuspiderItem()
 
         # for sel in response.xpath('//*[@id="thread_list"]/li[@class=" j_thread_list clearfix"]'):
+
         l.add_xpath('title', '//*[@class="threadlist_title pull_left j_th_tit "]/a/@title')
         l.add_xpath('author', '//*[@class="frs-author-name-wrap"]/a/text()')
         yield l.load_item()
+
             # item['title'] = sel.xpath('//*[@class="threadlist_title pull_left j_th_tit "]/a/@title').extract()
             # item['author'] = sel.xpath('//*[@class="frs-author-name-wrap"]/a/text()').extract()
             # yield item
