@@ -19,6 +19,13 @@ ITEM_PIPELINES = {'ZhihuSpider.pipelines.ZhihuspiderPipeline': 300}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ZhihuSpider (+http://www.yourdomain.com)'
 
+#减慢爬取速度 为1s
+download_delay = 1
+#爬取网站深度
+DEPTH_LIMIT = 20
+#禁止cookies,防止被ban
+COOKIES_ENABLED = False
+
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 

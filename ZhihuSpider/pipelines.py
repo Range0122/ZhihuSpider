@@ -17,7 +17,7 @@ class ZhihuspiderPipeline(object):
 
     def process_item(self, item, spider):
         self.file = codecs.open('data.txt', 'a', encoding='utf-8')
-        self.file.write(item["title"] + item["author"] + '\r')
+        self.file.write(item["url"] + ' ' + item["title"] + ' ' + item["author"] + ' ' + item["content"] + '\r')
         self.file.close()
         return item
 

@@ -13,4 +13,6 @@ class ZhihuspiderItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     author = scrapy.Field()
+    url = scrapy.Field()
+    content = scrapy.Field()
     pass
