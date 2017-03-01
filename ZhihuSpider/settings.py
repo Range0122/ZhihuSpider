@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = 'ZhihuSpider.spiders'
 ITEM_PIPELINES = {'ZhihuSpider.pipelines.ZhihuspiderPipeline': 300}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ZhihuSpider (+http://www.yourdomain.com)'
+USER_AGENT = 'ZhihuSpider (+http://www.yourdomain.com)'
 
 #减慢爬取速度 为1s
 download_delay = 1
@@ -49,18 +49,28 @@ ROBOTSTXT_OBEY = True
 #     "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
 # ]
 
-# USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'
-#
-# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-#
-# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
-# SCHEDULER_PERSIST = True
-# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
-# SCHEDULER_ORDER = 'BFO'
-#
-# REDIS_URL = None
-# REDIS_HOST = '127.0.0.1'
-# REDIS_PORT = 6379
+
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+#SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderPriorityQueue"
+#SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderQueue"
+#SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderStack"
+
+
+LOG_LEVEL = 'DEBUG'
+
+# Introduce an artifical delay to make use of parallelism. to speed up the
+# crawl.
+DOWNLOAD_DELAY = 1
+
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
+SCHEDULER_ORDER = 'BFO'
+
+REDIS_URL = None
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

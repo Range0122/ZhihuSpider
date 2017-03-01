@@ -2,7 +2,7 @@
 
 import scrapy
 from ZhihuSpider.items import ZhihuspiderItem
-from scrapy_redis.spiders import RedisSpider
+from scrapy_redis.spiders import RedisCrawlSpider
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from bs4 import BeautifulSoup
@@ -13,7 +13,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-class ZhSpider(CrawlSpider):
+class ZhSpider(RedisCrawlSpider):
 
     name = "zh_spider"
     start_urls = ['http://tieba.baidu.com/f?kw=%D0%C2%D4%AB%BD%E1%D2%C2&fr=ala0&loc=rec']
