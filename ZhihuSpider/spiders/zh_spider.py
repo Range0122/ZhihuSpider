@@ -2,6 +2,9 @@
 
 import scrapy
 from ZhihuSpider.items import ZhihuspiderItem
+from scrapy_redis.spiders import RedisSpider
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
 from bs4 import BeautifulSoup
 import re
 import sys
@@ -10,14 +13,17 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-class ZhSpider(scrapy.Spider):
+class ZhSpider(CrawlSpider):
 
     name = "zh_spider"
     start_urls = ['http://tieba.baidu.com/f?kw=%D0%C2%D4%AB%BD%E1%D2%C2&fr=ala0&loc=rec']
 
-
-    def parse(self, response):
-
+    rules = [
+        Rule(LinkExtractor(allow=('utf-8&pn'), unique=True),
+             callback='parse_page', follow=True),
+    ]
+    # restrict_xpaths = ('//a[@class="next pagination-item "]/@href',)
+    def parse_page(self, response):
         soup = BeautifulSoup(response.body, "html5lib")
         basic_url = "http://tieba.baidu.com"
 
