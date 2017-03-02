@@ -15,3 +15,5 @@
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/4218178-f10213cc6da476f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 到现在还没有完全弄清楚，`spider`是怎么传到`docker`这里的，而且目前也只是大概明白了Redis分布式的原理，对于`Dockerfile`、`docker-compose.yml`、`requirements.txt`这三个文件的编写方式，原理都还不是很明白。
+
+图片传上来之后加载不全，可以转'http://www.jianshu.com/p/20ab00de10bb'
