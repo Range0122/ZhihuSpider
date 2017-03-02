@@ -62,8 +62,7 @@ SCHEDULER_PERSIST = True
 
 LOG_LEVEL = 'DEBUG'
 
-# Introduce an artifical delay to make use of parallelism. to speed up the
-# crawl.
+# Introduce an artifical delay to make use of parallelism. to speed up the crawl.
 DOWNLOAD_DELAY = 1
 
 SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
