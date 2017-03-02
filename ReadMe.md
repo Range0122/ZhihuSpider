@@ -1,17 +1,17 @@
-#Ãû½ĞzhihuµÄÌù°ÉÅÀ³æ
-±¾À´ÊÇÏëÅÀÖªºõµÄ£¬ºóÀ´¾õµÃµÚÒ»´Î³¢ÊÔscrapy¼°Ïà¹ØµÄÒ»Ğ©°ü£¬¾Í»»ÁË¼òµ¥Ò»µãµÄÍøÕ¾¡£
-#¸üĞÂ
+#åå«zhihuçš„è´´å§çˆ¬è™«
+æœ¬æ¥æ˜¯æƒ³çˆ¬çŸ¥ä¹çš„ï¼Œåæ¥è§‰å¾—ç¬¬ä¸€æ¬¡å°è¯•scrapyåŠç›¸å…³çš„ä¸€äº›åŒ…ï¼Œå°±æ¢äº†ç®€å•ä¸€ç‚¹çš„ç½‘ç«™ã€‚
+#æ›´æ–°
 ##2017.03.02
-ÔçÉÏ×öÁËÒ»Ğ©Ğ¡µÄ¸Ä¶¯£¬ÈÔÈ»±¨´í¡£ÈçÏÂ£º
+æ—©ä¸Šåšäº†ä¸€äº›å°çš„æ”¹åŠ¨ï¼Œåœ¨cmdä¸‹æ‰§è¡Œ`docker-compose up`è¯­å¥åä»ç„¶æŠ¥é”™ã€‚å¦‚ä¸‹ï¼š
 
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/4218178-60b937b60aff7ed3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-²»ÖªµÀÎªÊ²Ã´»á³öÏÖ`KeyError: 'Spider not found: zh_spider'`ºÍ`ImportError: No module named bs4`ÒÔ¼°`Could not load spiders from module 'ZhihuSpider.spiders'. Check SPIDER_MODULES setting`ÕâÑùµÄError
-ÍøÉÏÄÜ²éµ½µÄÃ»ÓĞ¸úRedisÏà¹ØµÄ£¬¶¼Ö»ÊÇÔÚ`Scrapy`ÖĞµÄ`Settings`Ã»ÓĞÉèÖÃºÃ£¬»òÕßÃ»ÓĞÃ÷È·`spider`µÄ`name`ÊôĞÔ
+ä¸çŸ¥é“ä¸ºä»€ä¹ˆä¼šå‡ºç°`KeyError: 'Spider not found: zh_spider'`å’Œ`ImportError: No module named bs4`ä»¥åŠ`Could not load spiders from module 'ZhihuSpider.spiders'. Check SPIDER_MODULES setting`è¿™æ ·çš„Error
+ç½‘ä¸Šèƒ½æŸ¥åˆ°çš„æ²¡æœ‰è·ŸRedisç›¸å…³çš„ï¼Œéƒ½åªæ˜¯åœ¨`Scrapy`ä¸­çš„`Settings`æ²¡æœ‰è®¾ç½®å¥½ï¼Œæˆ–è€…æ²¡æœ‰æ˜ç¡®`spider`çš„`name`å±æ€§
 
-ÁíÍâ»¹ÓĞÒ»¸öÒÉÎÊ£º
+å¦å¤–è¿˜æœ‰ä¸€ä¸ªç–‘é—®ï¼š
 
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/4218178-f10213cc6da476f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-µ½ÏÖÔÚ»¹Ã»ÓĞÍêÈ«ÅªÇå³ş£¬`spider`ÊÇÔõÃ´´«µ½`docker`ÕâÀïµÄ£¬¶øÇÒÄ¿Ç°Ò²Ö»ÊÇ´ó¸ÅÃ÷°×ÁËRedis·Ö²¼Ê½µÄÔ­Àí£¬¶ÔÓÚ`Dockerfile`¡¢`docker-compose.yml`¡¢`requirements.txt`ÕâÈı¸öÎÄ¼şµÄ±àĞ´·½Ê½£¬Ô­Àí¶¼»¹²»ÊÇºÜÃ÷°×¡£
+åˆ°ç°åœ¨è¿˜æ²¡æœ‰å®Œå…¨å¼„æ¸…æ¥šï¼Œ`spider`æ˜¯æ€ä¹ˆä¼ åˆ°`docker`è¿™é‡Œçš„ï¼Œè€Œä¸”ç›®å‰ä¹Ÿåªæ˜¯å¤§æ¦‚æ˜ç™½äº†Redisåˆ†å¸ƒå¼çš„åŸç†ï¼Œå¯¹äº`Dockerfile`ã€`docker-compose.yml`ã€`requirements.txt`è¿™ä¸‰ä¸ªæ–‡ä»¶çš„ç¼–å†™æ–¹å¼ï¼ŒåŸç†éƒ½è¿˜ä¸æ˜¯å¾ˆæ˜ç™½ã€‚
