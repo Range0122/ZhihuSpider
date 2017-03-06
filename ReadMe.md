@@ -17,3 +17,6 @@
 到现在还没有完全弄清楚，`spider`是怎么传到`docker`这里的，而且目前也只是大概明白了Redis分布式的原理，对于`Dockerfile`、`docker-compose.yml`、`requirements.txt`这三个文件的编写方式，原理都还不是很明白。
 
 图片传上来之后加载不全，可以转'http://www.jianshu.com/p/20ab00de10bb'
+
+##2017.03.02
+终于跑起来了，能够在命令行下看到爬虫抓取到的数据，也可以在docker中开启多个redis-spider进行爬取，但是多次调试pipeline仍然无法保存数据到本地，print也无法打印出来。
