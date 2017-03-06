@@ -2,6 +2,5 @@ beautifulsoup4
 scrapy
 scrapy-redis
 lxml
-re
 bs4
 redis
