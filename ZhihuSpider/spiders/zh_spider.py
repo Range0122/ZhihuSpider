@@ -20,7 +20,7 @@ class ZhSpider(CrawlSpider):
     redis_key = 'zh_spider:start_urls'
     rules = [
         Rule(LinkExtractor(allow=('utf-8&pn'), unique=True),
-             callback='parse_page', follow=True),
+             callback='parse_page', follow=False),
     ]
     # restrict_xpaths = ('//a[@class="next pagination-item "]/@href',)
 

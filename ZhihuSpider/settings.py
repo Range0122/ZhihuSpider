@@ -12,9 +12,11 @@ BOT_NAME = ['ZhihuSpider', ]
 
 USER_AGENT = 'ZhihuSpider (+https://github.com/Range0122/ZhihuSpider/tree/master/ZhihuSpider)'
 
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
-SCHEDULER_PERSIST = True
+# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# SCHEDULER_PERSIST = True
+
+
 #SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderPriorityQueue"
 #SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderQueue"
 #SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderStack"
@@ -28,7 +30,8 @@ LOG_LEVEL = 'DEBUG'
 
 # Introduce an artifical delay to make use of parallelism. to speed up the
 # crawl.
-DOWNLOAD_DELAY = 1
+
+DOWNLOAD_DELAY = 0.5
 
 # SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 # REDIS_URL = '127.0.0.1:6379'
